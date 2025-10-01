@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando a interatividade do usuário</title>
+</head>
+<body>
+    <h1 id="titulo">
+        Interação do usuário
+    </h1>
+
+    <p>Por favor, digite o que está sendo pedido.</p>
+
+    <label>
+        Digite o primeiro número:
+        <input id="n1" type="number">
+    </label>
+    <br>
+
+    <label>
+        Digite o segundo número:
+        <input id="n2" type="number">
+    </label>
+    <br><br>
+
+    <button id = "btn">Calcular</button>
+
+    <div id = "out"></div>
+
+    <script>
+        function soma (n1, n2){
+            if (isNaN(n1) || isNaN(n2) || n1 <= 0 || n2 <= 0) {
+                alert("O número precisa ser maior que 0.")
+            }else{
+                return n1 + n2;    
+            }
+    }
+
+        document.getElementById('btn').addEventListener('click', function fazer(){
+        const n1 = Number(document.getElementById("n1").value);
+        const n2 = Number(document.getElementById("n2").value);
+
+        document.getElementById("out").textContent = `Soma de ${n1} + ${n2} = ${soma(n1, n2)}`;
+
+    });
+
+    </script>
+</body>
+</html>

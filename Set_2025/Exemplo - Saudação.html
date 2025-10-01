@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Saudações!
+    </h1>
+
+    <label>
+        Digite o seu nome: 
+        <input id = "nome" type = "text">
+    </label>
+
+    <button id = "btn">Saudar</button>
+
+    <div id = "out">
+        
+    </div>
+
+   <script>
+    function saudar(nome) {
+        let numeros = "1234567890";
+        let simbolos = "!@#$%¨&*";
+        let misturados = numeros + simbolos;
+        
+        if (nome == numeros || nome == simbolos || /[^a-zA-Z\s]/.test(nome)) {
+            alert("Entrada inválida, digite novamente.");
+            return null;
+        } else {
+            return nome;
+        }
+    }
+
+    document.getElementById('btn').addEventListener('click', function() {
+        const nome = document.getElementById("nome").value;
+        const resultado = saudar(nome);
+        
+        if (resultado) {
+            document.getElementById("out").textContent = `Olá, ${resultado}!`;
+        }
+    });
+</script>
+
+</body>
+</html>
