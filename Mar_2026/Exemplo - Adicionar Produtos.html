@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Produtos</h2>
+
+    <button id="btnCarregar" style="cursor: pointer;">Carregar produtos</button>
+    <p id="loading"></p>
+    <ul id="produtos"></ul>
+
+    <script>
+        const produtos = ["Mouse", "Teclado", "Monitor"];
+        const botao = document.getElementById("btnCarregar");
+        const lista = document.getElementById("produtos");
+        const carregar = document.getElementById("loading");
+
+        botao.addEventListener("click", () => {
+            lista.innerHTML = "";
+
+            carregar.textContent = "Carregando . . .";
+            document.body.style.cursor = "progress";
+            botao.style.cursor = "progress";
+
+            setTimeout(() => {
+                carregar.textContent = "";
+                document.body.style.cursor = "default";
+                botao.style.cursor = "pointer";
+                produtos.forEach(produto => {
+                    const li = document.createElement("li");
+                    li.innerText = produto;
+                    li.classList.add("list");
+                    lista.appendChild(li);
+                });
+            }, 3000);
+        });
+
+    </script>
+</body>
+</html>

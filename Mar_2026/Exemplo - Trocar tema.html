@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Noturno</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="btn-tema">Alternar tema</button>
+
+    <h1>Bem-vindo ao meu site!</h1>
+    <p>Este é um paragráfo de exemplo para testarmos a mudança de cores entre o tema claro e o escuro.</p>
+
+    <script>
+        const btnTema = document.getElementById('btn-tema');
+        const corposite = document.body;
+
+        btnTema.addEventListener('click', function() {
+            corposite.classList.toggle('tema-escuro');
+        });
+
+    </script>
+    
+</body>
+</html>

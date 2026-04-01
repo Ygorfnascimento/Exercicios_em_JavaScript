@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista">
+        <li>Estudar JS</li>
+        <li>Praticar DOM</li>
+    </ul>
+
+    <script>
+        const itens = document.querySelectorAll("#lista")
+
+        itens.forEach(item => {
+            item.addEventListener("click", () => {
+                item.remove();
+            });
+        });
+    </script>
+</body>
+</html>
