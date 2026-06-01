@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas de Futebol - API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="exercicio.css">
+</head>
+
+<body class="bg-zinc-950 text-zinc-100 min-h-screen p-6 md:p-12">
+
+<header class="max-w-5xl mx-auto text-center mb-12">
+    <h1 class="text-5xl font-black mb-4 tracking-tighter uppercase italic text-green-400">
+        Estatísticas de <span class="text-white border-b-4 border-green-500 pb-1">Futebol</span>
+    </h1>
+
+    <div class="flex flex-wrap justify-center gap-4">
+        <button id="btn-brasileirao"
+            class="group bg-green-500 hover:bg-green-600 text-zinc-950 font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-green-500/20">
+            Brasileirão 2024
+        </button>
+
+        <button id="btn-premier"
+            class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 active:scale-95 border border-zinc-700">
+            Premier League 23/24
+        </button>
+    </div>
+</header>
+
+<main id="resultado-container" class="max-w-5xl mx-auto" role="region" aria-live="polite">
+
+    <div id="estado-inicial" class="text-center py-20 text-zinc-500 italic">
+        <p class="text-xl">⚽ Aguardando comando...</p>
+        <p class="text-sm">Selecione uma liga acima para visualizar as estatísticas.</p>
+    </div>
+
+    <div id="loading" class="hidden flex flex-col items-center justify-center py-20">
+        <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-green-500 mb-4"></div>
+        <p class="text-green-500 font-medium animate-pulse">Carregando dados da API...</p>
+    </div>
+
+    <div id="cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+</main>
+
+<script src="exercicio.js"></script>
+
+</body>
+</html>
